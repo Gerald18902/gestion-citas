@@ -128,14 +128,14 @@ Dos citas se solapan si:
 
 #### Funcionalidades Requeridas
 
-1. **Vista principal con calendario diario** (opcional pero valorado)
+1. **Vista principal con calendario diario** (opcional)
 
    - Visualización tipo timeline del día
    - Citas bloqueadas por horas
 
 2. **Manejo de errores y feedback**
 
-   - Notificaciones toast para operaciones exitosas
+   - Feback visual para operaciones exitosas
    - Alertas claras para conflictos
    - Loading states en operaciones async
 
@@ -150,9 +150,11 @@ Dos citas se solapan si:
 ### Backend
 
 - ✅ **Lógica de solapamiento correcta**
+
   - Detecta todos los casos de solapamiento
   - No genera falsos positivos
   - Manejo correcto de zonas horarias/timestamps
+
 - ✅ **API RESTful bien diseñada**
 
   - Endpoints semánticamente correctos
@@ -170,7 +172,7 @@ Dos citas se solapan si:
   - Middleware apropiados
   - Funciones reutilizables
 
-### Frontend (40 puntos)
+### Frontend
 
 - ✅ **Interfaz funcional y usable**
 
@@ -194,12 +196,12 @@ Dos citas se solapan si:
   - Uso apropiado de Vue Composition API / Options API
   - Estado reactivo bien implementado
 
-### Integración End-to-End (20 puntos)
+### Integración End-to-End
 
 - ✅ **Funcionalidad completa**
 
   - CRUD completo funcional
-  - Detección de conflictos en tiempo real
+  - Detección de conflictos
   - Sincronización frontend-backend
 
 - ✅ **Arquitectura y estructura**
@@ -208,31 +210,9 @@ Dos citas se solapan si:
   - Configuración adecuada
   - Variables de entorno
 
-- ✅ **Documentación**
-  - README con instrucciones claras
-  - Comentarios en código crítico
-  - Colección Postman/Thunder Client (opcional)
-
 ---
 
-## Entregables
-
-1. **Repositorio Git** con:
-
-   - Carpeta `/backend` con código Express
-   - Carpeta `/frontend` con código Vue
-   - `.env.example` con variables requeridas
-   - README.md con instrucciones de instalación
-
-2. **README.md** debe incluir:
-
-   - Comandos para instalar dependencias
-   - Comandos para iniciar backend y frontend
-   - Configuración de MongoDB (local o Atlas)
-   - Decisiones técnicas importantes
-   - Supuestos asumidos
-
-3. **Estructura esperada**:
+2. **Estructura de ejemplo esperada**:
 
 ```
 proyecto/
@@ -259,17 +239,9 @@ proyecto/
 
 ---
 
-## Instrucciones de Instalación y Ejecución
-
-Para poner en marcha este boilerplate, sigue los siguientes pasos:
-
-### 1. Instalación de Dependencias
-
-Abre dos terminales separadas, una para el backend y otra para el frontend.
+## Start boilerplate
 
 #### Backend
-
-Navega al directorio `backend` e instala las dependencias:
 
 ```bash
 cd backend
@@ -278,42 +250,10 @@ npm install
 
 #### Frontend
 
-Navega al directorio `frontend` e instala las dependencias:
-
 ```bash
 cd frontend
 npm install
 ```
-
-### 2. Ejecución de la Aplicación
-
-#### Backend
-
-En la terminal del backend, inicia el servidor:
-
-```bash
-cd backend
-npm start
-```
-
-El servidor backend se ejecutará en `http://localhost:3000` (o el puerto especificado en `.env.example`).
-
-#### Frontend
-
-En la terminal del frontend, inicia la aplicación Vue:
-
-```bash
-cd frontend
-npm run dev
-```
-
-La aplicación frontend se ejecutará en `http://localhost:5173` (o el puerto que Vite asigne).
-
-### 3. Configuración de MongoDB
-
-Para este boilerplate inicial, no se requiere una conexión a MongoDB. Sin embargo, para la implementación completa, necesitarás configurar tu base de datos. Puedes usar una instancia local de MongoDB o un servicio en la nube como MongoDB Atlas.
-
----
 
 ## Bonus
 
