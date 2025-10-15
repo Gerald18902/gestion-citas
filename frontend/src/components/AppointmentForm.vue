@@ -100,8 +100,12 @@ const conflicts = ref([]);
 watch(
   () => props.appointment,
   (val) => {
-    if (val) Object.assign(form, val);
-    else
+    if (val) {
+      Object.assign(form, {
+        ...val,
+        date: toDateInput(val.date),
+      });
+    } else {
       Object.assign(form, {
         patientName: "",
         doctorName: "",
@@ -111,11 +115,27 @@ watch(
         reason: "",
         status: "scheduled",
       });
+    }
     errors.value = [];
     conflicts.value = [];
   },
   { immediate: true }
 );
+
+
+function toDateInput(value) {
+  if (!value) return "";
+
+  const d = new Date(value);
+
+  d.setDate(d.getDate() + 1);
+
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 
 function validateAndSave() {
   errors.value = [];
