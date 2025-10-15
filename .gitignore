@@ -1,0 +1,11 @@
+# dependencias
+node_modules/
+
+# configuración de entorno
+.env
+backend/.env
+frontend/.env
+
+# build outputs
+dist/
+.DS_Store
